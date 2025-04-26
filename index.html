@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 31</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 31: ¡El Baile del Coding Express!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción rojo, amarillo, azul, blanco, verde - o los 5 colores disponibles) y 10 iBricks (para decoración) por cada pareja. Papel y colores/crayones.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡El Tren quiere Bailar! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir la idea de crear una secuencia de acciones como si fuera un baile o una actuación para el tren.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y pregunta si les gusta bailar o ver espectáculos.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, súper estrellas del CODE SQUAD! ¿A quién le gusta bailar? ¿O ver un espectáculo con luces y sonidos? ¡Es súper divertido! Pues, ¿qué creen? ¡Nuestro amigo, el Coding Express, nos vio bailar el otro día y ahora quiere hacer su propio 'baile' especial para nosotros!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que para crear un baile se necesita pensar en los pasos en orden (secuencia).</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Crear un baile o un show necesita mucha concentración! ¡Tenemos que pensar en los pasos: primero este, luego este otro, y después aquel! ¡Es una secuencia! Vamos a nuestro Gimnasio Cerebral para practicar cómo poner pasos en orden y estar listos para ser los ¡coreógrafos del Coding Express!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar el seguimiento de una secuencia de acciones kinestésicas.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, enfatizando "primero hacemos esto, luego esto...".</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Vamos a bailar para inspirarnos! Recuerden, ¡cada paso va después del anterior! ¡No podemos hacer el final antes del principio! ¡Sigan la música y la secuencia! ¡Así practicamos para crear el baile de nuestro tren!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - ¡La Coreografía del Tren! -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🕺 Actividad 3: ¡Diseñemos el Baile del Tren! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Explicar que los ladrillos de acción serán los "pasos de baile" y que ellos diseñarán la secuencia (coreografía) que el tren seguirá.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Explica que el tren quiere hacer un show, pero necesita que el CODE SQUAD le diga qué hacer y en qué orden.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD! ¡Nuestro Coding Express está emocionado! Quiere hacer un baile especial para nosotros, ¡su propio show sobre rieles! Pero... ¡no sabe qué pasos hacer ni en qué orden! ¡Necesita a los mejores coreógrafos del mundo! ¿Y quiénes son? ¡USTEDES!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica que los ladrillos de acción serán los "pasos de baile" (rojo=parar, amarillo=sonar, azul=reversa, etc.). El reto es crear una secuencia de estos pasos. Introduce la idea de dibujarlo primero.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Cómo le diremos al tren qué hacer? ¡Con nuestros ladrillos mágicos de acción! ¡Cada color será un 'paso de baile' diferente! Por ejemplo: el Amarillo puede ser '¡Haz un sonido!', el Azul '¡Ve en reversa un poquito!', el Rojo '¡Detente para posar!'. ¡Ustedes decidirán la secuencia! Nuestro reto será: ¡crear una secuencia de pasos de baile (ladrillos de acción) para el Coding Express! Primero, pensaremos y dibujaremos los pasos en orden en un papel. ¡Luego construiremos la pista y pondremos los ladrillos para ver el gran show!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Dúos de Coreógrafos! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para diseñar y programar juntos la secuencia de baile del tren.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que los grandes shows se crean en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Los mejores bailes y espectáculos se crean con ideas de muchas personas! ¡Dos coreógrafos piensan pasos más divertidos que uno solo! ¡Vamos a formar nuestros Dúos de Coreógrafos para diseñar el baile más increíble para nuestro Coding Express! ¡Busquen a su pareja creativa!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a pensar juntos qué "pasos de baile" (acciones/ladrillos) quieren incluir.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Dúos de Coreógrafos? ¡Excelente! Ahora, empiecen a pensar juntos: ¿Qué pasos quieren que haga el tren? ¿Quieren que haga sonidos? ¿Que se mueva de forma graciosa? ¿Que pare al final? ¡Hablen con su pareja y prepárense para diseñar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Planifica y Construye el Baile! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">📝 Actividad 5: ¡Creando la Coreografía! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Planificar la secuencia de acciones dibujando los ladrillos en orden y luego construir la vía correspondiente colocando los ladrillos según el plan.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso Común: Planificación en Papel -->
+             <tr>
+                <td><strong>PASO 1 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Diseña tu Secuencia!". Entrega papel y colores. Pide que dibujen en orden los ladrillos de acción que usarán (la secuencia de baile).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Coreógrafos, a sus mesas de diseño! Tomen su papel y colores. ¡Ahora dibujen en orden los 'pasos de baile' (ladrillos de acción) que quieren para el show del tren! ¿Cuál va primero? ¿Y después? ¡Dibujen los ladrillos uno tras otro, en la secuencia que imaginaron! ¡Este será su plan secreto!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Pista K1: ¡Show de 3 Pasos!". Guía para dibujar 3 ladrillos diferentes en secuencia. Luego, construir una vía recta simple (3 tramos) y colocar esos 3 ladrillos en orden. Pueden decorar con 2-3 iBricks.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Su show tendrá 3 pasos de baile! Elijan 3 ladrillos de acción DIFERENTES (como amarillo, azul y rojo) y dibújenlos en orden en su papel. ¿Listos? ¡Ahora construyan una pista recta con 3 vías y coloquen sus 3 ladrillos en el mismo orden que dibujaron! ¡Pueden poner un par de bloques gigantes como decoración del escenario!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Pista K2: ¡Show de 4 Pasos con Curva!". Guía para dibujar 4 ladrillos diferentes en secuencia. Luego, construir vía con 1 curva (recta-curva-recta-recta) y colocar los 4 ladrillos en orden. Decorar con 4-5 iBricks.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Coreógrafos K2! ¡Su espectáculo será de 4 pasos! Elijan 4 ladrillos DIFERENTES y dibújenlos en orden. ¡Ahora, la pista! Construyan un camino con una curva (recta, curva, recta, recta). Coloquen sus 4 ladrillos en orden a lo largo de la pista. ¡Usen unos 4 bloques gigantes para hacer un escenario espectacular!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Pista K3: ¡Show de 5 Pasos con 2 Curvas!". Guía para dibujar 5 ladrillos diferentes en secuencia. Construir vía con 2 curvas (ej. recta-curva-recta-curva-recta) y colocar los 5 ladrillos en orden. Decorar con 5-6 iBricks.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡Su gran show tendrá 5 pasos! Elijan 5 ladrillos DIFERENTES y dibújenlos en secuencia. ¡La pista será más emocionante! Construyan un camino con ¡dos curvas! (recta, curva, recta, curva, recta). Coloquen sus 5 ladrillos en orden a lo largo de esta súper pista. ¡Decoren con 5 o 6 bloques gigantes para un escenario de gala!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Que Comience el Show! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-show')">
+        <div class="title">🎬 Actividad 6: ¡Luces, Cámara, Acción... Tren! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar la secuencia programada (el "baile") y observar si el tren realiza las acciones correspondientes a los ladrillos en el orden planificado.</div>
+    </div>
+    <div id="probando-show" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Show K1!". Guía a las parejas para colocar el tren al inicio y darle el empujón. Observar si realiza las 3 acciones en orden. Animar a identificar cada "paso de baile". Repetir si es necesario.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Es la hora del show! Coloquen al Coding Express al inicio de su pista. ¡Un suave empujón y... acción! Miren atentamente: ¿Hizo el primer paso (acción del 1er ladrillo)? ¿Y el segundo? ¿Y el tercero? ¡CUENTEN LOS PASOS! ¡Bravo! ¡Crearon su primera coreografía! Si quieren, ¡pueden probar de nuevo!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Show K2!". Guía para probar el tren. Observar si realiza las 4 acciones en orden, incluyendo el paso por la curva. Animar a nombrar las acciones. Repetir/ajustar si es necesario.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Coreógrafos K2! ¡Silencio en la sala, que empieza el espectáculo! Pongan el tren al inicio. ¡Empujón! ¡Veamos los 4 pasos! ¿Hizo el primero? ¿Pasó la curva? ¿El segundo? ¿El tercero? ¿Y el cuarto? ¡NOMBREN CADA PASO QUE HACE! ¡Fantástico! ¡Una secuencia perfecta! ¿Quieren volver a verlo?"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Show K3!". Guía para probar el tren. Observar si realiza las 5 acciones en orden, pasando por las dos curvas. Fomentar la descripción de la secuencia completa. Repetir/ajustar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡El momento estelar! Coloquen el tren al inicio de su súper pista. ¡Que comience el show! ¡Observen con atención los 5 pasos! ¿Primero...? ¿Segundo...? ¿Tercero...? ¿Cuarto...? ¿Y el quinto final? ¡Describan toda la secuencia que crearon! ¡Una obra maestra de la codificación y la coreografía! ¡Pueden repetirlo para disfrutarlo otra vez!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Ovación para los Coreógrafos! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar la creación de las secuencias, reforzar la idea de que los ladrillos representan acciones (abstracción) y que el orden importa (secuenciación).</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, aplaude sus creaciones. Realiza preguntas de reflexión sobre el proceso de diseño y la secuencia.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡BRAVÍSIMO, CODE SQUAD! ¡Qué espectáculos tan increíbles han creado para nuestro Coding Express! ¡Han sido unos coreógrafos fantásticos! ¡Misión cumplida con mucho ritmo! Pensemos en nuestro trabajo de hoy:
+1. ¿Qué representaba cada ladrillo de color en nuestro 'baile'? (¡Un paso de baile! ¡Una acción!)
+2. ¿Fue importante poner los ladrillos en el orden que dibujamos? ¿Por qué? (¡Sí, para que hiciera los pasos en orden!)
+3. ¿Les gustó inventar su propia secuencia de acciones para el tren?
+¡Hoy hemos aprendido que podemos darle instrucciones al tren usando ladrillos de colores como si fueran pasos de baile, y que el orden en que los ponemos cambia todo el espectáculo! ¡Son unos genios de la secuencia y la creatividad! ¡Hasta la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
